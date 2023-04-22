@@ -25,6 +25,7 @@ newYorkTimeElement.innerHTML = newYorkTime.format("h:mm:ss [<small>]A[</small>]"
 }
 
 function updateCity(event) {
+    function updateChangeTime() {
     let cityTimeZone = event.target.value;
     if (cityTimeZone === "current") {
         cityTimeZone = moment.tz.guess();
@@ -44,6 +45,9 @@ function updateCity(event) {
 `;
 }
 
+updateChangeTime();
+setInterval(updateChangeTime, 1000);
+}
 updateTime();
 setInterval(updateTime, 1000);
 
