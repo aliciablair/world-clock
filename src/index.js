@@ -10,7 +10,7 @@ function updateTime() {
     losAngelesDateElement.innerHTML = losAngelesTime.format("MMMM Do YYYY");
     losAngelesTimeElement.innerHTML = losAngelesTime.format("h:mm:ss [<small>]A[</small>]");
     }
-    
+
 // New York
 let newYorkElement = document.querySelector("#new-york");
 if (newYorkElement) {
@@ -26,6 +26,9 @@ newYorkTimeElement.innerHTML = newYorkTime.format("h:mm:ss [<small>]A[</small>]"
 
 function updateCity(event) {
     let cityTimeZone = event.target.value;
+    if (cityTimeZone === "current") {
+        cityTimeZone = moment.tz.guess();
+    }
     let cityName = cityTimeZone.replace("_", " ").split("/")[1];
     let cityTime = moment().tz(cityTimeZone);
     let citiesElement = document.querySelector("#cities");
@@ -44,5 +47,4 @@ updateTime();
 setInterval(updateTime, 1000);
 
 let citiesSelectElement = document.querySelector("#city");
-
 citiesSelectElement.addEventListener("change", updateCity);
