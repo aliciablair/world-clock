@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap" rel="stylesheet">    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-timezone-with-data-1970-2030.min.js"></script>
     <title>World Clock</title>
@@ -16,12 +19,14 @@
 <select id="city">
     <option value="">Select a city..</option>
     <option value="current">My current location</option>
+    <Option value="America/Argentina/Cordoba">Argentina</Option>
+    <option value="Europe/Berlin">Berlin</option>
     <option value="Europe/London">London</option>
     <option value="Europe/Paris">Paris</option>
-    <option value="Pacific/Auckland">Auckland</option>
 </select>
 
 <div id="cities">
+
 <div class="city" id="los-angeles">
     <div>
       <h2>Los Angeles</h2>
@@ -37,9 +42,18 @@
     </div>
     <div class="time"></div>
   </div>
-</div>
+  
+  <div class="city" id="tokyo">
+      <div>
+          <h2>Tokyo</h2>
+          <div class="date"></div>
+        </div>
+        <div class="time"></div>
+    </div>
+    </div>
+    </div>
 
-</div>
+
   <footer>
         This project was coded by <strong>Alicia Blair</strong> and is
         <a href="https://github.com/girlsgotomarz/world-clock" target="_blank">open sourced on GitHub</a> 
